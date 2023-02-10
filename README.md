@@ -63,7 +63,7 @@ pydep 工具将所有公共可重用的源文件，归入一个 `code-base` 的 
 } ]
 ```
 
-另外还可用 `option` 指示已存在同名文件，且源头文件更旧的情况下该如何处理，取值有 3 种选择：`"confirm", "force", "newest"`，其中，confirm 指显示提示请用户选择，force 是强行覆盖拷贝，newest 表示只在源头文件比目标目录下文件更新时，才覆盖拷贝，否则忽略。这 3 个取值中缺省为 `"confirm"`。
+另外还可用 `option` 指示存在冲突情况下如何处理，冲突是指：目标目录中已存在同名文件，而且源头文件更旧。该选项有 3 种取值：`"confirm", "force", "newest"`，其中，confirm 指显示提示请用户选择，force 是强行覆盖拷贝，newest 表示只在源头文件比目标目录下文件更新时，才覆盖拷贝，否则忽略。这 3 个取值中缺省为 `"confirm"`。
 
 &nbsp;
 
@@ -83,8 +83,17 @@ pydepends.json
 
 ## 运行 pydep
 
-在命令行窗口，我们应先进入目标 repo 的工程目录，运行 `./pydep` 即自动完成当前 repo 的公共依赖文件的拷贝。
+pydep 批处理脚本用 python 语言编写，它还支持在命令行界面用 python 发起，比如：
 
-我们还可以运行 `chmod +x pydep` 命令为 pydep 文件添加执行权限，之后在文件管理器中，用鼠标双击 pydep 文件，也激发它自动运行。
+```
+python3 pydep.py --help     # 获得帮助
+python3 pydep.py               # 执行拷贝任务
+python3 pydep.py module1 module2     # 执行指定的一个或多个模块的拷贝任务
+python3 pydep.py --force module3        # 指定 option 的缺省值为 "force"
+```
+
+我们需要运行 `chmod +x pydep` 命令为 pydep 文件添加执行权限，然后在命令行窗口，进入目标 repo 的根目录，运行 `./pydep` 即实施文件拷贝。
+
+在文件管理器用鼠标双击 pydep 文件，也触发 pydep 文件自动运行。
 
 &nbsp;
