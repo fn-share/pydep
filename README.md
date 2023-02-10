@@ -87,9 +87,9 @@ pydep 批处理脚本用 python 语言编写，它还支持在命令行界面用
 
 ```
 python3 pydep.py --help     # 获得帮助
-python3 pydep.py               # 执行拷贝任务
-python3 pydep.py module1 module2     # 执行指定的一个或多个模块的拷贝任务
-python3 pydep.py --force module3        # 指定 option 的缺省值为 "force"
+python3 pydep.py            # 执行拷贝任务
+python3 pydep.py module1 module2   # 执行指定的一个或多个模块的拷贝任务
+python3 pydep.py --force module3   # 指定 option 的缺省值为 "force"
 ```
 
 我们需要运行 `chmod +x pydep` 命令为 pydep 文件添加执行权限，然后在命令行窗口，进入目标 repo 的根目录，运行 `./pydep` 即实施文件拷贝。
