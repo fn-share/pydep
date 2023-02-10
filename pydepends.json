@@ -1,0 +1,11 @@
+[ {
+  "module": "tool",
+  "source": "../code-base/tool",
+  "target": "./tool",
+  "files": ["debug.py","online_patch.py"]
+}, {
+  "module": "base36",
+  "source": "../code-base/util",
+  "target": "./root",
+  "files": ["base36.py"]
+} ]

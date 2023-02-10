@@ -1,7 +1,3 @@
-# pydep files
-pydep
-pydepends.json
-
 # MAC files
 .DS_Store
 .vscode
